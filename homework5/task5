@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class homework5
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Введите предложение: ");
+        Scanner scanner = new Scanner(System.in);
+        String sent = scanner.nextLine();
+        int maxNumber=0;//номер самого длинного слова
+        int maxCount=0, curCount=0;
+        int i=0;
+        String[] words = sent.split(" ");
+
+        for (String word : words)
+        {
+            curCount=word.length();//длина текущего слова
+            if (curCount>maxCount)
+            {
+                maxCount=curCount;
+                maxNumber=i;
+            }
+            i++;
+        }
+        System.out.println("Самое длинное слово - " + words[maxNumber]);
+    }
+}
