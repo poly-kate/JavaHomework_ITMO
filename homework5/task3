@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class homeworkString3
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Введите строку: ");
+        Scanner scanPoly = new Scanner(System.in);
+        String strP = scanPoly.nextLine();
+
+        String strPoly = strP.toLowerCase();//меняем регистр
+        strPoly = strPoly.replaceAll(" ", "");//убираем пробелы
+
+        int len = strPoly.length();
+        int flagNew=0;
+
+        for(int i=0; i<(len/2); i++)
+        {
+            //сравниваем первый и последний символ, пока не дойдем до центра
+            if (strPoly.charAt(i)!=strPoly.charAt(len-i-1))
+            {
+                flagNew=1;
+                break;
+            }
+        }
+        if (flagNew==0) System.out.println("Это палиндром!");
+        else System.out.println("Это не палиндром!");
+    }
+}
