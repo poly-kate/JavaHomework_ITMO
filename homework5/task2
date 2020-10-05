@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class homeworkString2
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Введите первую строку: ");
+        Scanner scan = new Scanner(System.in);
+        String firstStr = scan.nextLine();
+
+        System.out.println("Введите вторую строку: ");
+        String secondStr = scan.nextLine();
+        int count=0;//кол-во вхождений
+
+        int index = secondStr.indexOf(firstStr);//индекс первого вхождения
+        while (index!=-1)
+        {
+            count++;
+            index += firstStr.length();//сдвигаем
+            index = secondStr.indexOf(firstStr, index);//пропускает первые index символов
+        }
+        System.out.println("Количество вхождений = " + count);
+    }
+}
